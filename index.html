@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login - Cute Design</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+    <div class="login-container">
+        <h1>Enter Password</h1>
+        
+        <form id="loginForm">
+            <p>It's when we officially got together
+                <br> (mm-dd-yyyy)
+            </p>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+            <button type="submit">Enter</button>
+            <div class="error-message" id="errorMessage">Uh oh, Did you forget?</div>
+        </form>
+    </div>
+
+    <script>
+        const correctPassword = "04302025";
+        const form = document.getElementById('loginForm');
+        const errorMessage = document.getElementById('errorMessage');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const enteredPassword = form.password.value;
+            if (enteredPassword === correctPassword) {
+                // Add fade-out class to body
+                document.body.classList.add('fade-out');
+                // Wait for the transition to finish before redirecting
+                setTimeout(() => {
+                    window.location.href = 'home.html';
+                }, 500);
+            } else {
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+body {
+    background: #ffe4e1;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: opacity 0.5s ease;
+    opacity: 1;
+}
+body.fade-out {
+    opacity: 0;
+}
+.login-container {
+    background: #fff0f5;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(255, 182, 193, 0.4);
+    text-align: center;
+    width: 300px;
+}
+h1 {
+    color: #ff69b4;
+    margin-bottom: 20px;
+}
+p {
+    font-size: 15px;
+    color: #559205;
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #d147a3;
+}
+input[type="password"] {
+    width: 100%;
+    padding: 9px;
+    border: 2px solid #ffb6c1;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+input[type="password"]:focus {
+    border-color: #ff69b4;
+}
+button {
+    margin-top: 20px;
+    background-color: #ff69b4;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+button:hover {
+    background-color: #ff1493;
+}
+.error-message {
+    color: #ff1493;
+    margin-top: 15px;
+    font-weight: bold;
+    display: none;
+}

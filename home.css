@@ -1,0 +1,107 @@
+body {
+    background: #ffe4e1;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #ff69b4;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+}
+h1 {
+    font-size: 3em;
+    margin: 0 0 20px 0;
+}
+section {
+    background: #fff0f5;
+    border-radius: 15px;
+    padding: 20px 30px;
+    box-shadow: 0 8px 15px rgba(255, 182, 193, 0.4);
+    max-width: 600px;
+    width: 100%;
+    color: #d147a3;
+    filter: blur(6px);
+    cursor: pointer;
+    transition: filter 0.5s ease;
+    user-select: none;
+    margin-bottom: 20px;
+}
+section.unblurred {
+    filter: none;
+    cursor: default;
+    user-select: text;
+}
+section h2 {
+    margin-top: 0;
+    color: #ff69b4;
+    font-size: 2em;
+}
+section p {
+    text-align: justify;
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: #559205;
+    margin-top: 10px;
+}
+/* Floating hearts animation */
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff69b4;
+    transform: rotate(-45deg);
+    animation: floatUp 4s linear infinite;
+    opacity: 0.8;
+    border-radius: 20px 20px 0 0;
+}
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff69b4;
+    border-radius: 50%;
+}
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+.heart::after {
+    left: 10px;
+    top: 0;
+}
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(-45deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-150px) rotate(-45deg);
+        opacity: 0;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+    section {
+        padding: 15px 20px;
+        max-width: 90%;
+    }
+    section h2 {
+        font-size: 1.5em;
+    }
+    section p {
+        font-size: 1em;
+    }
+}
